@@ -142,14 +142,71 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">w7 << <a href='w7.html'>Previous</a> <a href='w12.html'>Next</a> >> w12<br /><h1>w11_hw</h1>
-<p>題目一</p>
+<p><a href="https://gist.githubusercontent.com/41323146/c87ccd69e40e41e61c57784a03856d92/raw/bdc3d34e368ca5c0027ec12667be429f0137f4b7/hw5.py">題目一</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def print_triangle(size):
+    for i in range(1, size + 1):
+        print('*' * i)
+
+# 設定三角形的高度
+print_triangle(5)
+</pre>
 <p>心得:<span>有了上次W10的經驗有比較熟練了很開心</span></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/-Vqmo8mx-1Q?si=fmRPCi_sye_2TGmt" title="YouTube video player" width="560"></iframe></p>
 <p>題目二</p>
 <p>心得:<span>覺得越來越有趣了</span></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/5pmszp9XQfo?si=CmEW9b9rIeDsDIU0" title="YouTube video player" width="560"></iframe></p>
-<p><a href="https://mdecp2024.github.io/hw-41323146/content/Brython.html?src=https://gist.githubusercontent.com/41323146/d7f92a669768c9dc2546dc8ac0e67d01/raw/b8f72b4e5ba9921ff99a09cf59d679be2939d3af/hw2.py">解:</a></p>
-<br />w7 << <a href='w7.html'>Previous</a> <a href='w12.html'>Next</a> >> w12</div>
+<p><a href="https://gist.githubusercontent.com/41323146/5f8bd2fe0d90376d4aeaa26cc1e7747a/raw/1095ad96fc0294235f78df38fa8a938482dcbcc9/hw6.py">程式</a></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+
+# 利用 HTML 建立畫布超文件物件
+canvas = html.CANVAS(width=400, height=400)
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+
+# 每格的像素數
+gs = 20  # 每個格子的大小
+
+# 取得畫布的 2D 繪圖上下文
+ctx = canvas.getContext("2d")
+
+# 繪製矩形的函數
+def dRect(lux, luy, w, h, s=1, c='#ff0000'):
+    ctx.lineWidth = s
+    ctx.strokeStyle = c
+    ctx.beginPath()
+    ctx.rect(lux, luy, w, h)
+    ctx.stroke()
+
+# 繪製 10x10 的格子
+def grid(width, height, grid_pix):
+    for i in range(width):
+        for j in range(height):
+            dRect(i * grid_pix, j * grid_pix, grid_pix, grid_pix, 1, "lightgrey")
+
+# 填充格子的函數
+def fill(x, y, color):
+    ctx.fillStyle = color
+    ctx.fillRect(x - 1, y - 1, gs, gs)
+
+# 在方格內繪製圓形
+def draw_circle(center_x, center_y, radius, color):
+    # 計算圓心的座標在畫布上的位置 (需要考慮格子的大小)
+    cx = center_x * gs + gs / 2
+    cy = center_y * gs + gs / 2
+    
+    ctx.fillStyle = color
+    ctx.beginPath()
+    ctx.arc(cx, cy, radius * gs, 0, 2 * 3.14159)  # 設定圓心座標與半徑
+    ctx.fill()
+
+# 繪製 10x10 的格子
+grid(10, 10, gs)
+
+# 繪製圓形，圓心在 (5,5)，半徑為 3
+draw_circle(5, 5, 3, "black")
+</pre>
+<p><br/><br/></p><br />w7 << <a href='w7.html'>Previous</a> <a href='w12.html'>Next</a> >> w12</div>
         
     <!-- footer -->
       <div class="container">
