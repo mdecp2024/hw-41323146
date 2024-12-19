@@ -400,7 +400,58 @@ x3, y3, r3 = 200, 100, 100  # 圓3：圓心 (200, 100)，半徑 100
  
 # 呼叫畫圓函式，並繪製三個圓
 draw_circles(x1, y1, r1, x2, y2, r2, x3, y3, r3</pre>
-<p><img alt="" height="190" src="/images/螢幕擷取畫面 2024-12-19 132022.png" width="253"/></p><h1>HW 2</h1>
+<p><img alt="" height="190" src="/images/螢幕擷取畫面 2024-12-19 132022.png" width="253"/></p><h3>w15_hw</h3>
+<p>題目一</p>
+<p><a href="https://mdecp2024.github.io/hw-41323146/content/Brython.html?src=https://gist.githubusercontent.com/41323146/4590dbad5568ecd572e9cb7b17229233/raw/a6192d3aa7080a4f271353ae9c599f5b87d50049/w15hw.py">解</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 使用內建的 sum 函數來計算從 1 加到 100 的總和
+total_sum = sum(range(1, 101))
+
+# 顯示結果
+print(total_sum)
+</pre>
+<p>題目二</p>
+<p><a href="https://mdecp2024.github.io/hw-41323146/content/Brython.html?src=https://gist.githubusercontent.com/41323146/98127196197a7175fbfe7d528282d1fd/raw/baa5fe0c3d9240b8b475475bb35d1f2871d1de87/w15_2hw.py">addto</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 定義函式 addto，接受兩個參數 start 和 end
+def addto(start, end):
+    total = 0
+    for i in range(start, end + 1):
+        total += i
+    return total
+
+# 呼叫函式 addto(1, 100) 並顯示結果
+result = addto(1, 100)
+print("1 加到 100 的總和是:", result)
+</pre>
+<p>題目三</p>
+<p><a href="https://mdecp2024.github.io/hw-41323146/content/Brython.html?src=https://gist.githubusercontent.com/41323146/2d3fc35036638e42e675a46902decce2/raw/c15ef61d2112c38031e2667b18e08006cd230402/w15_3hw.py">add_only_even</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 定義函式 add_only_even，接受兩個參數 start 和 end
+def add_only_even(start, end):
+    total = 0
+    for i in range(start, end + 1):
+        if i % 2 == 0:  # 檢查是否為偶數
+            total += i
+    return total
+
+# 呼叫函式 add_only_even(1, 100) 並顯示結果
+result = add_only_even(1, 100)
+print("從 1 加到 100 的偶數總和是:", result)
+</pre>
+<p>題目四</p>
+<p><a href="https://mdecp2024.github.io/hw-41323146/content/Brython.html?src=https://gist.githubusercontent.com/41323146/0b65374fe99faf3f520617b7653edc2f/raw/48c78d74c9fda1e08f6e7a569835eca1426ef4fc/w15_4hw.py">add_avoid_8</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 定義函式 add_avoid_8，接受兩個參數 start 和 end
+def add_avoid_8(start, end):
+    total = 0
+    for i in range(start, end + 1):
+        if '8' in str(i):  # 檢查數字中是否包含 '8'
+            continue  # 如果包含 '8'，跳過此數字
+        total += i
+    return total
+
+# 呼叫函式 add_avoid_8(1, 100) 並顯示結果
+result = add_avoid_8(1, 100)
+print("從 1 加到 100，避開包含 8 的數字後的總和是:", result)
+</pre>
+<p></p><h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
 <hr/>
