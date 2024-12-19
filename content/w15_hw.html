@@ -143,7 +143,7 @@ img.add_border {
         </header>
     <div id="tipue_search_content">w14_hw << <a href='w14_hw.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2<br /><h1>w15_hw</h1>
 <p>題目一</p>
-<p><a href="https://mdecp2024.github.io/hw-41323146/content/Brython.html?src=https://gist.githubusercontent.com/41323146/4590dbad5568ecd572e9cb7b17229233/raw/a6192d3aa7080a4f271353ae9c599f5b87d50049/w15hw.py">解</a></p>
+<p><a href="https://gist.githubusercontent.com/41323146/4590dbad5568ecd572e9cb7b17229233/raw/a6192d3aa7080a4f271353ae9c599f5b87d50049/w15hw.py"> anchor</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 使用內建的 sum 函數來計算從 1 加到 100 的總和
 total_sum = sum(range(1, 101))
 
@@ -178,21 +178,21 @@ result = add_only_even(1, 100)
 print("從 1 加到 100 的偶數總和是:", result)
 </pre>
 <p>題目四</p>
-<p><a href="https://mdecp2024.github.io/hw-41323146/content/Brython.html?src=https://gist.githubusercontent.com/41323146/0b65374fe99faf3f520617b7653edc2f/raw/48c78d74c9fda1e08f6e7a569835eca1426ef4fc/w15_4hw.py">add_avoid_8</a></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 定義函式 add_avoid_8，接受兩個參數 start 和 end
-def add_avoid_8(start, end):
+<p><a href="https://mdecp2024.github.io/hw-41323146/content/Brython.html?src=https://gist.githubusercontent.com/41323146/3d0aa8f49abb29003c1121275abb2b8e/raw/e7cce095991b737fbf5a15c472c16802a7ba70ce/w15_4_hw.py">add_avoid_8</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 定義函式 add_only_even_avoid_8，接受兩個參數 start 和 end
+def add_only_even_avoid_8(start, end):
     total = 0
     for i in range(start, end + 1):
-        if '8' in str(i):  # 檢查數字中是否包含 '8'
-            continue  # 如果包含 '8'，跳過此數字
-        total += i
+        if i % 2 == 0 and '8' not in str(i):  # 檢查是否為偶數且不包含 '8'
+            total += i
     return total
 
-# 呼叫函式 add_avoid_8(1, 100) 並顯示結果
-result = add_avoid_8(1, 100)
-print("從 1 加到 100，避開包含 8 的數字後的總和是:", result)
+# 呼叫函式 add_only_even_avoid_8(1, 100) 並顯示結果
+result = add_only_even_avoid_8(1, 100)
+print("從 1 加到 100 的偶數總和（避開包含 8 的數字）是:", result)
 </pre>
-<p></p><br />w14_hw << <a href='w14_hw.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
+<p></p>
+<p>心得:雖然是用chatGPT但至少有去慢慢了解到那些英文的意思還蠻不錯的畢竟我英文很爛能多學就盡量學</p><br />w14_hw << <a href='w14_hw.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
         
     <!-- footer -->
       <div class="container">

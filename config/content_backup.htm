@@ -402,7 +402,7 @@ x3, y3, r3 = 200, 100, 100  # 圓3：圓心 (200, 100)，半徑 100
 draw_circles(x1, y1, r1, x2, y2, r2, x3, y3, r3</pre>
 <p><img alt="" height="190" src="/images/螢幕擷取畫面 2024-12-19 132022.png" width="253"/></p><h3>w15_hw</h3>
 <p>題目一</p>
-<p><a href="https://mdecp2024.github.io/hw-41323146/content/Brython.html?src=https://gist.githubusercontent.com/41323146/4590dbad5568ecd572e9cb7b17229233/raw/a6192d3aa7080a4f271353ae9c599f5b87d50049/w15hw.py">解</a></p>
+<p><a href="https://gist.githubusercontent.com/41323146/4590dbad5568ecd572e9cb7b17229233/raw/a6192d3aa7080a4f271353ae9c599f5b87d50049/w15hw.py"> anchor</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 使用內建的 sum 函數來計算從 1 加到 100 的總和
 total_sum = sum(range(1, 101))
 
@@ -436,7 +436,22 @@ def add_only_even(start, end):
 result = add_only_even(1, 100)
 print("從 1 加到 100 的偶數總和是:", result)
 </pre>
-<p></p><h1>HW 2</h1>
+<p>題目四</p>
+<p><a href="https://mdecp2024.github.io/hw-41323146/content/Brython.html?src=https://gist.githubusercontent.com/41323146/3d0aa8f49abb29003c1121275abb2b8e/raw/e7cce095991b737fbf5a15c472c16802a7ba70ce/w15_4_hw.py">add_avoid_8</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 定義函式 add_only_even_avoid_8，接受兩個參數 start 和 end
+def add_only_even_avoid_8(start, end):
+    total = 0
+    for i in range(start, end + 1):
+        if i % 2 == 0 and '8' not in str(i):  # 檢查是否為偶數且不包含 '8'
+            total += i
+    return total
+
+# 呼叫函式 add_only_even_avoid_8(1, 100) 並顯示結果
+result = add_only_even_avoid_8(1, 100)
+print("從 1 加到 100 的偶數總和（避開包含 8 的數字）是:", result)
+</pre>
+<p></p>
+<p>心得:雖然是用chatGPT但至少有去慢慢了解到那些英文的意思還蠻不錯的畢竟我英文很爛要去慢慢學習</p><h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
 <hr/>
