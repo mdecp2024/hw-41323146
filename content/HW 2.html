@@ -148,7 +148,93 @@ img.add_border {
 <p>延續 HW 1 網頁資料整理與程式練習方法, 整理下列內容 (20%):</p>
 <p>PART 2: Introduction to lists and if/else statements</p>
 <p>PART 3: Introduction to the for loop</p>
-<p>完成上述流程整理後, 請將 HW2 自評分數輸入 cp2024 自評表單中.</p><br />w15_hw << <a href='w15_hw.html'>Previous</a> <a href='w16_exam1.html'>Next</a> >> w16_exam1</div>
+<p>完成上述流程整理後, 請將 HW2 自評分數輸入 cp2024 自評表單中.</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import document, html
+import math
+
+# 建立 Canvas 並加入網頁
+canvas = html.CANVAS(width=400, height=150, style={"border": '1px solid black'})
+document &lt;= canvas
+ctx = canvas.getContext("2d")
+
+# 設定原點座標
+origin_x, origin_y = 31, 46
+
+# 畫六邊形
+def draw_hexagon(x, y, size):
+    ctx.beginPath()
+    for i in range(6):
+        angle = i * (2 * math.pi / 6)
+        px = x + size * math.cos(angle)
+        py = y + size * math.sin(angle)
+        if i == 0:
+            ctx.moveTo(px, py)
+        else:
+            ctx.lineTo(px, py)
+    ctx.closePath()
+    ctx.fillStyle = "orange"
+    ctx.fill()
+
+# 畫菱形
+def draw_diamond(x, y, width, height):
+    ctx.beginPath()
+    ctx.moveTo(x, y - height / 2)  # 上
+    ctx.lineTo(x + width / 2, y)  # 右
+    ctx.lineTo(x, y + height / 2)  # 下
+    ctx.lineTo(x - width / 2, y)  # 左
+    ctx.closePath()
+    ctx.fillStyle = "teal"
+    ctx.fill()
+
+# 畫三角形
+def draw_triangle(x, y, base, height):
+    ctx.beginPath()
+    ctx.moveTo(x - base / 2, y + height / 2)  # 左下
+    ctx.lineTo(x + base / 2, y + height / 2)  # 右下
+    ctx.lineTo(x, y - height / 2)  # 上
+    ctx.closePath()
+    ctx.fillStyle = "lightblue"
+    ctx.fill()
+
+# 畫圓形
+def draw_circle(x, y, radius):
+    ctx.beginPath()
+    ctx.arc(x, y, radius, 0, 2 * math.pi)
+    ctx.fillStyle = "magenta"
+    ctx.fill()
+
+# 畫正方形
+def draw_square(x, y, size):
+    ctx.beginPath()
+    ctx.rect(x - size / 2, y - size / 2, size, size)
+    ctx.fillStyle = "khaki"
+    ctx.fill()
+
+# 畫長方形
+def draw_rectangle(x, y, width, height):
+    ctx.beginPath()
+    ctx.rect(x - width / 2, y - height / 2, width, height)
+    ctx.fillStyle = "navy"
+    ctx.fill()
+
+# 標示原點座標
+def mark_origin(x, y):
+    ctx.font = "12px Arial"
+    ctx.fillStyle = "black"
+    ctx.fillText(f"({x}, {y})", x - 10, y - 30)  # 座標標示移到上方
+
+# 繪製圖形
+draw_hexagon(origin_x, origin_y, 30)  # 六邊形
+draw_diamond(origin_x + 70, origin_y, 40, 60)  # 菱形
+draw_triangle(origin_x + 85, origin_y + 45, 40, 40)  # 三角形 (疊在菱形下方)
+draw_circle(origin_x + 140, origin_y, 30)  # 圓形
+draw_square(origin_x + 210, origin_y, 40)  # 正方形
+draw_rectangle(origin_x + 280, origin_y, 60, 30)  # 長方形
+
+# 標示原點
+mark_origin(origin_x, origin_y)</pre>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/UZDEmlWQP6Q?si=K86Wrndaxr1AvpT0" title="YouTube video player" width="560"></iframe></p>
+<p><a href="https://mdecp2024.github.io/hw-41323146/content/Brython.html?src=https://gist.githubusercontent.com/41323146/dcb10d86f90ccfbf6a9926bda399ba40/raw/205ec773384a49cead29bf69224690cfa25ad276/w16_test.py">連結</a></p><br />w15_hw << <a href='w15_hw.html'>Previous</a> <a href='w16_exam1.html'>Next</a> >> w16_exam1</div>
         
     <!-- footer -->
       <div class="container">
